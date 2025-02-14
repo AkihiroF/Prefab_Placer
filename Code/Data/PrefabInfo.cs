@@ -1,8 +1,7 @@
 using System;
-using UnityEditor;
 using UnityEngine;
 
-namespace Map.Data
+namespace Prefab_Placer.Runtime.Data
 {
     [Serializable]
     public class PrefabInfo

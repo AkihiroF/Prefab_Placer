@@ -1,10 +1,7 @@
-using System;
-using Map;
-using UniRx;
 using UnityEditor;
 using UnityEngine;
 
-namespace _Source.Editor
+namespace Prefab_Placer.Code.Editor
 {
     [CustomEditor(typeof(PrefabPlacer))]
     public class PrefabPlacerEditor : UnityEditor.Editor

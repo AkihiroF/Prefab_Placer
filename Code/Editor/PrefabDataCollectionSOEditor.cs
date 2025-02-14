@@ -1,9 +1,9 @@
 using System.Collections.Generic;
-using Map.Data;
+using Prefab_Placer.Runtime.Data;
 using UnityEditor;
 using UnityEngine;
 
-namespace _Source.Editor
+namespace Prefab_Placer.Code.Editor
 {
     [CustomEditor(typeof(PrefabDataCollectionSO))]
     public class PrefabDataCollectionSOEditor : UnityEditor.Editor

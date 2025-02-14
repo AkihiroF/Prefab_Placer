@@ -1,17 +1,16 @@
-namespace Map
-{
-    using UnityEngine;
-    using System.Collections.Generic;
-    using System;
-    using System.Linq;
-    using Data;
-    using Utils;
-    using System.Threading;
-    using System.Threading.Tasks;
-    using AdvancedTerrainGrass;
-    using UniRx;
-    using UnityEditor;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading;
+using System.Threading.Tasks;
+using Prefab_Placer.Code.Data;
+using Prefab_Placer.Runtime.Data;
+using UnityEditor;
+using UnityEngine;
+using UnityEngine.Events;
 
+namespace Prefab_Placer.Code
+{
     [ExecuteInEditMode]
     public class PrefabPlacer : MonoBehaviour
     {
@@ -36,6 +35,8 @@ namespace Map
         [Header("Prefabs Settings")]
         [field: SerializeField]
         public PrefabDataCollectionSO dataCollection { get; private set; }
+
+        [SerializeField] private UnityEvent ActionAfterGeneration;
 
         [SerializeField] public Terrain targetTerrain;
 
@@ -95,11 +96,6 @@ namespace Map
                 case GenerationType.Mesh:
                     ClearTerrainMesh(targetTerrain);
                     break;
-            }
-
-            if (targetTerrain.TryGetComponent(out GrassManager manager))
-            {
-                manager.UpdateGrass();
             }
         }
 
@@ -303,11 +299,7 @@ namespace Map
                     }
                 }
                 targetTerrain.Flush();
-                if (targetTerrain.TryGetComponent(out GrassManager manager))
-                {
-                    manager.UpdateGrass();
-                }
-
+                ActionAfterGeneration?.Invoke();
                 EditorUtility.SetDirty(this);
                 CancelGeneration();
             }
