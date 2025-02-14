@@ -14,5 +14,5 @@
   },
   "_fingerprint": "fd3511530bf27a730240dcd11e5ffd3fed648d19", 
   "dependencies":
-  "git+https://github.com/neuecc/UniRx.git":"v7.1.0"
+  "https://github.com/neuecc/UniRx.git"
 }
