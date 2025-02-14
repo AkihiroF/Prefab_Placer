@@ -4,6 +4,7 @@ namespace PlacerData
 {
     public static class Extensions
     {
+        private static System.Random random = new ();
         public static bool CheckLayer(this LayerMask original, int toCheck)
         {
             return (original.value & (1 << toCheck)) > 0;
@@ -36,6 +37,14 @@ namespace PlacerData
             worldPos.z = terrainLocation.z + terrainPos.z;
 
             return true;
+        }
+        
+        public static float GetRandomFloat(this float min, float max)
+        {
+            double range = max - min;
+            double sample = random.NextDouble();
+            double scaled = (sample * range) + min;
+            return (float)scaled;
         }
     }
 }

@@ -84,6 +84,9 @@ namespace Code
         {
             if (targetTerrain == null)
                 targetTerrain = FindAnyObjectByType<Terrain>();
+            
+            if(targetTerrain == null)
+                return;
 
             switch (generationType)
             {
@@ -211,16 +214,6 @@ namespace Code
                     progress.Value = i / infos.Count;
                     var pInfo = infos.Keys.ToArray()[i];
                     var targetPositions = infos[pInfo];
-                    Quaternion rot = Quaternion.identity;
-                    if (pInfo.isRandomRotation)
-                    {
-                        Vector3 euler = new Vector3(
-                            UnityEngine.Random.Range(0f, randomRotationRange.x),
-                            UnityEngine.Random.Range(0f, randomRotationRange.y),
-                            UnityEngine.Random.Range(0f, randomRotationRange.z)
-                        );
-                        rot = Quaternion.Euler(euler);
-                    }
 
                     if (pInfo.storeToTerrain)
                     {
@@ -240,6 +233,16 @@ namespace Code
                             {
                                 for (int j = 0; j < targetPositions.Count; j++)
                                 {
+                                    Quaternion rot = Quaternion.identity;
+                                    if (pInfo.isRandomRotation)
+                                    {
+                                        Vector3 euler = new Vector3(
+                                                0f.GetRandomFloat(randomRotationRange.x),
+                                                0f.GetRandomFloat(randomRotationRange.y),
+                                                0f.GetRandomFloat( randomRotationRange.z)
+                                        );
+                                        rot = Quaternion.Euler(euler);
+                                    }
                                     newInstances.Add(new TreeInstance()
                                     {
                                         position = treePos[j],
@@ -285,6 +288,17 @@ namespace Code
                     var parent = GetParent(pInfo);
                     foreach (var pos in targetPositions)
                     {
+                        Quaternion rot = Quaternion.identity;
+                        if (pInfo.isRandomRotation)
+                        {
+                            Vector3 euler = new Vector3(
+                                UnityEngine.Random.Range(0f, randomRotationRange.x),
+                                UnityEngine.Random.Range(0f, randomRotationRange.y),
+                                UnityEngine.Random.Range(0f, randomRotationRange.z)
+                            );
+                            rot = Quaternion.Euler(euler);
+                        }
+                        
                         var obj = Instantiate(
                             pInfo.prefab,
                             pos + pInfo.offset,
@@ -298,7 +312,7 @@ namespace Code
                         }
                     }
                 }
-                targetTerrain.Flush();
+                targetTerrain?.Flush();
                 ActionAfterGeneration?.Invoke();
                 EditorUtility.SetDirty(this);
                 CancelGeneration();
