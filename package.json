@@ -1,28 +1,15 @@
 {
-  "name": "com..",
-  "version": "1.0.0",
-  "displayName": "",
-  "description": "",
-  "unity": "2020.3",
-  "unityRelease": "0b5",
-  "documentationUrl": "",
-  "changelogUrl": "",
-  "licensesUrl": "",
-  "keywords": [
-  ],
+  "name": "com.akihirof.prefabplacer",
   "author": {
-    "name": "",
-    "email": "",
-    "url": ""
+    "name": "AkihiroF",
+    "url": "https://github.com/AkihiroF"
   },
-  "type": "tool",
-  "hideInEditor": false,
-  "samples": 
-[
-	{
-		"displayName": "Samples",
-		"description": "",
-		"path": "Samples~/"
-	}
-]
+  "displayName": "Prefab Placer",
+  "description": "Util for placement prefab on area/terrain",
+  "unity": "6000.0",
+  "version": "1.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AkihiroF/Prefab_Placer.git"
+  }
 }
