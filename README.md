@@ -5,7 +5,6 @@ Prefab Placer Tool is a Unity utility for procedural prefab placement on terrain
 ## Features
 
 - **Multiple Generation Modes:** Create points in rectangular, circular, spherical, or mesh-based areas.
-- **Asynchronous Point Generation:** Uses Poisson Disk Sampling to improve performance.
 - **Terrain Cleanup:** Remove trees and details from specified areas, with rotation support.
 - **Custom Inspectors & Gizmos:** Visualize generation areas and configure prefab parameters.
 - **UniRX Dependency:** Requires UniRX for reactive properties.
