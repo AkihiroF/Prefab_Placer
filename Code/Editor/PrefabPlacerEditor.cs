@@ -1,7 +1,9 @@
+using Code;
+using UniRx;
 using UnityEditor;
 using UnityEngine;
 
-namespace Code.Editor
+namespace PlacerEditor
 {
     [CustomEditor(typeof(PrefabPlacer))]
     public class PrefabPlacerEditor : UnityEditor.Editor

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Code.Data
+namespace PlacerData
 {
     public static class Extensions
     {

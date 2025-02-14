@@ -1,8 +1,8 @@
-using Code.Data;
+using PlacerData;
 using UnityEditor;
 using UnityEngine;
 
-namespace Code.Editor
+namespace PlacerEditor
 {
     [CustomPropertyDrawer(typeof(PrefabInfo))]
     public class PrefabInfoDrawer : PropertyDrawer

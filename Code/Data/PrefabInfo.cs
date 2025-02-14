@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace Code.Data
+namespace PlacerData
 {
     [Serializable]
     public class PrefabInfo

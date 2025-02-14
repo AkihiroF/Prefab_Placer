@@ -1,9 +1,9 @@
 using System.Collections.Generic;
-using Code.Data;
+using PlacerData;
 using UnityEditor;
 using UnityEngine;
 
-namespace Code.Editor
+namespace PlacerEditor
 {
     [CustomEditor(typeof(PrefabDataCollectionSO))]
     public class PrefabDataCollectionSOEditor : UnityEditor.Editor

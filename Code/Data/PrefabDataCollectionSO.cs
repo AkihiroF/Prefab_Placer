@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Code.Data
+namespace PlacerData
 {
     [CreateAssetMenu(fileName = "PrefabDataCollection", menuName = "Map/Prefab Data Collection")]
     public class PrefabDataCollectionSO : ScriptableObject
