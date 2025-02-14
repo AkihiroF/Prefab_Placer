@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace Prefab_Placer.Runtime.Data
+namespace Code.Data
 {
     [Serializable]
     public class PrefabInfo

@@ -1,8 +1,8 @@
-using Prefab_Placer.Runtime.Data;
+using Code.Data;
 using UnityEditor;
 using UnityEngine;
 
-namespace Prefab_Placer.Code.Editor
+namespace Code.Editor
 {
     [CustomPropertyDrawer(typeof(PrefabInfo))]
     public class PrefabInfoDrawer : PropertyDrawer

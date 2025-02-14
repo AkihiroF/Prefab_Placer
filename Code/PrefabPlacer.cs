@@ -3,13 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-using Prefab_Placer.Code.Data;
-using Prefab_Placer.Runtime.Data;
+using Code.Data;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace Prefab_Placer.Code
+namespace Code
 {
     [ExecuteInEditMode]
     public class PrefabPlacer : MonoBehaviour

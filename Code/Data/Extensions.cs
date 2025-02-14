@@ -1,7 +1,6 @@
-using System.Collections.Generic;
 using UnityEngine;
 
-namespace Prefab_Placer.Code.Data
+namespace Code.Data
 {
     public static class Extensions
     {

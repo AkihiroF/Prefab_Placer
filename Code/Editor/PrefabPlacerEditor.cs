@@ -1,7 +1,7 @@
 using UnityEditor;
 using UnityEngine;
 
-namespace Prefab_Placer.Code.Editor
+namespace Code.Editor
 {
     [CustomEditor(typeof(PrefabPlacer))]
     public class PrefabPlacerEditor : UnityEditor.Editor
